@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: StorePage(),
     );
   }
@@ -20,14 +21,23 @@ class StorePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Row(
-              children: [
-                Text("Woman"),
-                Text("Kids"),
-                Text("Shoes"),
-                Text("Bag"),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: Row(
+                children: [
+                  Text("Woman", style: TextStyle(fontWeight: FontWeight.bold)),
+                  Spacer(),
+                  Text("Kids", style: TextStyle(fontWeight: FontWeight.bold)),
+                  Spacer(),
+                  Text("Shoes", style: TextStyle(fontWeight: FontWeight.bold)),
+                  Spacer(),
+                  Text("Bag", style: TextStyle(fontWeight: FontWeight.bold)),
+                ],
+              ),
             ),
+            Expanded(child: Image.asset("assets/bag.jpeg", fit: BoxFit.cover)),
+            SizedBox(height: 2),
+            Expanded(child: Image.asset("assets/cloth.jpeg", fit: BoxFit.cover))
           ],
         ),
       ),
